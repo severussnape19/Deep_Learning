@@ -143,3 +143,63 @@ class ChurnModelV7(nn.Module):
 
     def forward(self, x):
         return self.model(x)
+
+
+
+
+loss_fn_1 = nn.BCEWithLogitsLoss(pos_weight=pos_weight)  # Use if you want class imbalance weighting
+loss_fn_2 = nn.BCELoss()  # Standard binary cross entropy
+
+# SGD — typically needs a smaller learning rate, weight decay often helps with regularization
+SGD_optim_1 = optim.SGD(model_1.parameters(), lr=0.01, weight_decay=1e-4)
+SGD_optim_2 = optim.SGD(model_2.parameters(), lr=0.01, weight_decay=1e-4)
+SGD_optim_3 = optim.SGD(model_3.parameters(), lr=0.01, weight_decay=1e-4)
+SGD_optim_4 = optim.SGD(model_4.parameters(), lr=0.01, weight_decay=1e-4)
+SGD_optim_5 = optim.SGD(model_5.parameters(), lr=0.01, weight_decay=1e-4)
+SGD_optim_6 = optim.SGD(model_6.parameters(), lr=0.01, weight_decay=1e-4)
+SGD_optim_7 = optim.SGD(model_7.parameters(), lr=0.01, weight_decay=1e-4)
+
+# Adam — usually works well with lr around 1e-3 to 3e-4, weight decay can be kept small or removed
+Adam_optim_1 = optim.Adam(model_1.parameters(), lr=0.0005)  # Removed weight_decay for stability
+Adam_optim_2 = optim.Adam(model_2.parameters(), lr=0.0005)
+Adam_optim_3 = optim.Adam(model_3.parameters(), lr=0.0005)
+Adam_optim_4 = optim.Adam(model_4.parameters(), lr=0.0005)
+Adam_optim_5 = optim.Adam(model_5.parameters(), lr=0.0005)
+Adam_optim_6 = optim.Adam(model_6.parameters(), lr=0.0005)
+Adam_optim_7 = optim.Adam(model_7.parameters(), lr=0.0005)
+
+# RMSprop — usually smaller lr around 1e-4 to 5e-4, weight decay often not needed
+RMSprop_optim_1 = optim.RMSprop(model_1.parameters(), lr=0.0003)
+RMSprop_optim_2 = optim.RMSprop(model_2.parameters(), lr=0.0003)
+RMSprop_optim_3 = optim.RMSprop(model_3.parameters(), lr=0.0003)
+RMSprop_optim_4 = optim.RMSprop(model_4.parameters(), lr=0.0003)
+RMSprop_optim_5 = optim.RMSprop(model_5.parameters(), lr=0.0003)
+RMSprop_optim_6 = optim.RMSprop(model_6.parameters(), lr=0.0003)
+RMSprop_optim_7 = optim.RMSprop(model_7.parameters(), lr=0.0003)
+
+# SGD with momentum (SGDW) — usually lr a bit higher than plain SGD, momentum 0.9 is good, weight_decay is helpful
+SGDW_optim_1 = optim.SGD(model_1.parameters(), lr=0.02, momentum=0.9, weight_decay=1e-4)
+SGDW_optim_2 = optim.SGD(model_2.parameters(), lr=0.02, momentum=0.9, weight_decay=1e-4)
+SGDW_optim_3 = optim.SGD(model_3.parameters(), lr=0.02, momentum=0.9, weight_decay=1e-4)
+SGDW_optim_4 = optim.SGD(model_4.parameters(), lr=0.02, momentum=0.9, weight_decay=1e-4)
+SGDW_optim_5 = optim.SGD(model_5.parameters(), lr=0.02, momentum=0.9, weight_decay=1e-4)
+SGDW_optim_6 = optim.SGD(model_6.parameters(), lr=0.02, momentum=0.9, weight_decay=1e-4)
+SGDW_optim_7 = optim.SGD(model_7.parameters(), lr=0.02, momentum=0.9, weight_decay=1e-4)
+
+# Adagrad — learning rate smaller, weight decay usually not used
+Adagrad_optim_1 = optim.Adagrad(model_1.parameters(), lr=0.005)
+Adagrad_optim_2 = optim.Adagrad(model_2.parameters(), lr=0.005)
+Adagrad_optim_3 = optim.Adagrad(model_3.parameters(), lr=0.005)
+Adagrad_optim_4 = optim.Adagrad(model_4.parameters(), lr=0.005)
+Adagrad_optim_5 = optim.Adagrad(model_5.parameters(), lr=0.005)
+Adagrad_optim_6 = optim.Adagrad(model_6.parameters(), lr=0.005)
+Adagrad_optim_7 = optim.Adagrad(model_7.parameters(), lr=0.005)
+
+# AdamW — good modern optimizer, lr around 1e-3 to 5e-4, keep weight decay for regularization
+AdamW_optim_1 = optim.AdamW(model_1.parameters(), lr=0.0007, weight_decay=1e-4)
+AdamW_optim_2 = optim.AdamW(model_2.parameters(), lr=0.0007, weight_decay=1e-4)
+AdamW_optim_3 = optim.AdamW(model_3.parameters(), lr=0.0007, weight_decay=1e-4)
+AdamW_optim_4 = optim.AdamW(model_4.parameters(), lr=0.0007, weight_decay=1e-4)
+AdamW_optim_5 = optim.AdamW(model_5.parameters(), lr=0.0007, weight_decay=1e-4)
+AdamW_optim_6 = optim.AdamW(model_6.parameters(), lr=0.0007, weight_decay=1e-4)
+AdamW_optim_7 = optim.AdamW(model_7.parameters(), lr=0.0007, weight_decay=1e-4)
